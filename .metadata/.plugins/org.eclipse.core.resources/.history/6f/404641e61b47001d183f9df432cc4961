@@ -1,0 +1,21 @@
+package selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class GmailLoginTest {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+
+		System.setProperty("webdriver.chrome.driver", "C:\\QA\\SeleniumJars\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://accounts.google.com/v3/signin/identifier?dsh=S-1291560144%3A1665241518904835&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&rip=1&sacu=1&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin&ifkv=AQDHYWqJPaRqyax77Rc9Vv2S0mJiPThoK5mjRF8h8TvpUZ6oqEBUPFcqJZms9EvlBnz-hzQQiHBUdw");
+		
+		driver.findElement(By.id("identifierId")).sendKeys("weyudgyuwe4545@#$%");
+		driver.findElement(By.id("identifierNext")).click();
+		Thread.sleep(3000);
+	}
+
+}

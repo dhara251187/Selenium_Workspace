@@ -1,0 +1,25 @@
+package selenium;
+
+public class XpathAxes {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+	}
+
+}
+
+
+//table[@id='contactList']/child::tbody/child::tr[2]/child::td/input
+//td[contains(text(),'Francisco Chang')]/parent::tr/child::td/input
+//td[contains(text(),'Roland Mendel')]/parent::tr/child::td/input
+//td[contains(text(),'Helen Bennett')]/parent::tr/child::td/input
+//td[contains(text(),'Yoshi Tannamuri')]/parent::tr/child::td/input
+//td[contains(text(),'Giovanni Rovelli')]/parent::tr/child::td/input
+
+
+//<a href="https://www.blogger.com/blogger.g?blogID=2026392825261642617&amp;pli=1#" xpath="1">Click</a>
+
+//click on click button in table
+//td[contains(text(),'Maria Anders')]/following-sibling::td[3]/a

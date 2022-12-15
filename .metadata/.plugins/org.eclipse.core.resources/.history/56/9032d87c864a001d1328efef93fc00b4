@@ -1,0 +1,33 @@
+package tests;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Shein {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		System.setProperty("webdriver.gecko.driver", "C:\\QA\\SeleniumJars\\geckodriver.exe");
+		WebDriver driver = new FirefoxDriver();
+		driver.get("https://ca.shein.com/?url_from=cagooglebrandshein_sheinShein02_srsa_20210124&cid=1453018513&setid=58136791378&adid=494361827201&pf=GOOGLE&gclid=EAIaIQobChMIsa26jOTb-gIVSBXUAR2zfw4_EAAYASAAEgIhQfD_BwE");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));
+		
+		driver.findElement(By.name("header-search")).sendKeys("Dress");
+		List<WebElement> drpDown = driver.findElements(By.xpath("//div[@class='search-content']"));
+		System.out.println(drpDown.size());
+		
+		for(int i=0; i<drpDown.size(); i++)
+		{
+			System.out.println(drpDown.get(i).getText());
+		}
+
+	}
+
+}
