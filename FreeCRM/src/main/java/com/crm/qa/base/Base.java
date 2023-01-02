@@ -12,13 +12,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import com.crm.qa.utilities.TestUtil;
+import com.crm.qa.utilities.WebEventListner;
 
 public class Base {
 
 	public static WebDriver driver;
 	public static Properties prop;
+	public  static EventFiringWebDriver e_driver;
+	public static WebEventListner eventListener;
 
 	public Base() {
 		try {
@@ -45,7 +49,15 @@ public class Base {
 			System.setProperty("webdriver.gecko.driver", "C:\\QA\\SeleniumJars\\geckodriver.exe");
 			driver = new FirefoxDriver();
 		}
-
+		//object of event firing wedriver classs
+		e_driver = new EventFiringWebDriver(driver);
+		//object of Web event listner class
+		eventListener = new WebEventListner();
+		//register eventlistner class object with event listner firing webdriver
+		e_driver.register(eventListener);
+		//assign event listner driver to main driver
+		driver = e_driver;
+		
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);

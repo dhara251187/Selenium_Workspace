@@ -1,4 +1,4 @@
-/*package stepDefinitions;
+package stepDefinitions;
 
 import java.time.Duration;
 import java.util.List;
@@ -85,4 +85,4 @@ public class DealsStepDefnition {
 		driver.findElement(By.id("commission")).sendKeys(dealValues.get(0).get(3));
 	}
 
-}*/
+}

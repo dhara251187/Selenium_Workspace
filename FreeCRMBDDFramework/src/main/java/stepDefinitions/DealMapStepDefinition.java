@@ -1,4 +1,4 @@
-package stepDefinitions;
+/*package stepDefinitions;
 
 
 import java.util.Map;
@@ -86,5 +86,5 @@ public class DealMapStepDefinition {
 		}
 	}
 
-}
+}*/
 
